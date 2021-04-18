@@ -11,6 +11,5 @@ public class Booking {
     @Id
     private String id;
     private LocalDateTime dateTime;
-    boolean isOpen;
-
+    private boolean isOpen;
 }
