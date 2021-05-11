@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Collection;
+import java.util.List;
 
 @Getter
 @Document(collection = "themes")
@@ -25,5 +25,5 @@ public class Theme {
     @DBRef
     private Store store;
     @DBRef
-    private Collection<Booking> bookings;
+    private List<Booking> bookings;
 }
