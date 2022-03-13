@@ -19,7 +19,8 @@ public class Theme {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
-    private String id;
+    private Long id;
+
     private String name;
     private Genre genre;
 

@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 public class BookingSimpleDto {
-    private String id;
+    private Long id;
     private LocalDateTime dateTime;
 
     public BookingSimpleDto(Booking b) {

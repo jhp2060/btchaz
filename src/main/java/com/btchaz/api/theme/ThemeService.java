@@ -11,7 +11,7 @@ import java.util.List;
 public class ThemeService {
     private ThemeRepository themeRepository;
 
-    public Theme findById(String id) {
+    public Theme findById(Long id) {
         return themeRepository.findById(id).orElseThrow();
     }
 

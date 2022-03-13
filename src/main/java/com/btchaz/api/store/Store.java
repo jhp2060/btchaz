@@ -12,7 +12,7 @@ import java.util.Collection;
 public class Store {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
-    private String id;
+    private Long id;
     private String name;
     private String siteURI;
 

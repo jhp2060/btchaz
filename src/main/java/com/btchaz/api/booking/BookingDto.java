@@ -10,13 +10,13 @@ import java.time.LocalDateTime;
 @Getter
 @NoArgsConstructor
 public class BookingDto {
-    private String id;
+    private Long id;
     private LocalDateTime dateTime;
     private boolean isOpen;
     private String themeName;
     private String themeGenre;
     private String storeName;
-    private String storeId;
+    private Long storeId;
 
     public BookingDto(Booking b) {
         this.id = b.getId();

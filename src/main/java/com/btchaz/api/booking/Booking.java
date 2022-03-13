@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
-    private String id;
+    private Long id;
 
     private LocalDateTime dateTime;
     private boolean isOpen;
