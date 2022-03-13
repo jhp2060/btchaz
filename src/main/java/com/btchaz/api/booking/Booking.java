@@ -2,20 +2,21 @@ package com.btchaz.api.booking;
 
 import com.btchaz.api.theme.Theme;
 import lombok.Getter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
-@Document(collection = "bookings")
+@Entity
 public class Booking {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
     private String id;
+
     private LocalDateTime dateTime;
     private boolean isOpen;
-    @DBRef
+
+    @ManyToOne
+    @JoinColumn(name="theme_id")
     private Theme theme;
 }

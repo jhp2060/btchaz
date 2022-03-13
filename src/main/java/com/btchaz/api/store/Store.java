@@ -3,21 +3,26 @@ package com.btchaz.api.store;
 import com.btchaz.api.region.Region;
 import com.btchaz.api.theme.Theme;
 import lombok.Getter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.*;
 import java.util.Collection;
 
 @Getter
-@Document(collection = "stores")
+@Entity
 public class Store {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
     private String id;
     private String name;
     private String siteURI;
-    @DBRef
+
+    @ManyToOne
+    @JoinColumn(name="region_id")
     private Region region;
-    @DBRef
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "theme"
+    )
     private Collection<Theme> themes;
 }

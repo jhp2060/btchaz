@@ -2,18 +2,21 @@ package com.btchaz.api.region;
 
 import com.btchaz.api.store.Store;
 import lombok.Getter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.*;
 import java.util.Collection;
 
 @Getter
-@Document(collection = "regions")
+@Entity
 public class Region {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
     private String id;
     private String name;
-    @DBRef
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            mappedBy = "store"
+    )
     private Collection<Store> stores;
 }

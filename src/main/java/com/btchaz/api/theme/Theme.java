@@ -3,14 +3,12 @@ package com.btchaz.api.theme;
 import com.btchaz.api.booking.Booking;
 import com.btchaz.api.store.Store;
 import lombok.Getter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
+import javax.persistence.*;
 import java.util.List;
 
 @Getter
-@Document(collection = "themes")
+@Entity
 public class Theme {
     public enum Genre {
         Unknown,
@@ -18,12 +16,20 @@ public class Theme {
         Adult,
         Adventure,
     }
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
     private String id;
     private String name;
     private Genre genre;
-    @DBRef
+
+    @ManyToOne
+    @JoinColumn(name="store_id")
     private Store store;
-    @DBRef
+
+    @OneToMany(
+            mappedBy = "booking",
+            cascade = CascadeType.ALL
+    )
     private List<Booking> bookings;
 }
