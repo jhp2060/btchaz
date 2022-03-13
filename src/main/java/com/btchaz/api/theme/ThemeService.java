@@ -14,6 +14,7 @@ public class ThemeService {
     public Theme findById(String id) {
         return themeRepository.findById(id).orElseThrow();
     }
+
     public List<Theme> findByGenre(String g) {
         Genre genre = Genre.valueOf(g);
         return themeRepository.findByGenre(genre);
