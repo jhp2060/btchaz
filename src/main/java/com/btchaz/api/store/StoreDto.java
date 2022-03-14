@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 @Getter
 @NoArgsConstructor
 public class StoreDto {
-    private String id;
+    private Long id;
     private String name;
     private String siteURI;
     private Collection<ThemeSimpleDto> themes;

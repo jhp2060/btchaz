@@ -13,11 +13,11 @@ import java.util.stream.Collectors;
 @Getter
 @NoArgsConstructor
 public class ThemeDto {
-    private String id;
+    private Long id;
     private String name;
     private String genre;
     private String storeName;
-    private String storeId;
+    private Long storeId;
     private LocalDate bookingDate;
     private Collection<BookingSimpleDto> bookings;
     public ThemeDto(Theme t,
