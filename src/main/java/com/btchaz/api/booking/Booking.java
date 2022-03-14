@@ -2,12 +2,14 @@ package com.btchaz.api.booking;
 
 import com.btchaz.api.theme.Theme;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Getter
 @Entity
+@NoArgsConstructor
 public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto_increment
