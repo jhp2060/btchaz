@@ -7,6 +7,6 @@ services:
       - db
   db:
     container_name: db
-    image: mongo
-
+#    image: mongo
+    image: mysql
 
