@@ -11,12 +11,14 @@ import java.util.Collection;
 @Getter
 @NoArgsConstructor
 public class RegionDto {
-    private String id;
+    private Long id;
     private String name;
     private Collection<Store> stores;
 
     public RegionDto(Region r) {
-
+        id = r.getId();
+        name = r.getName();
+        stores = r.getStores();
     }
 
 }
