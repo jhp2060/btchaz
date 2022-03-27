@@ -3,10 +3,12 @@ package com.btchaz.api.booking;
 import com.btchaz.api.theme.Theme;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+@Setter
 @Getter
 @Entity
 @NoArgsConstructor

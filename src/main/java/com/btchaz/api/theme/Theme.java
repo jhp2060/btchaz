@@ -4,11 +4,13 @@ import com.btchaz.api.booking.Booking;
 import com.btchaz.api.store.Store;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Getter
+@Setter
 @Entity
 @NoArgsConstructor
 public class Theme {
@@ -17,6 +19,7 @@ public class Theme {
         Horror,
         Adult,
         Adventure,
+        Fantasy,
     }
 
     @Id
@@ -24,6 +27,8 @@ public class Theme {
     private Long id;
 
     private String name;
+
+    @Enumerated(EnumType.STRING)
     private Genre genre;
 
     @ManyToOne

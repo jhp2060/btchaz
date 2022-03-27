@@ -4,11 +4,13 @@ import com.btchaz.api.region.Region;
 import com.btchaz.api.theme.Theme;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Collection;
 
 @Getter
+@Setter
 @Entity
 @NoArgsConstructor
 public class Store {
